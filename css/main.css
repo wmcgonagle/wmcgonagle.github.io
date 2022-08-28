@@ -2,11 +2,7 @@ body {
     background-color: #fdf6e3;
 }
 
-h1 {
-    font-family: monospace;
-    color: #657b83;
-}
-
+h1,
 p {
     font-family: monospace;
     color: #657b83;
