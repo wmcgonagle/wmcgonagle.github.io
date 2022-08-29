@@ -1,9 +1,20 @@
+/* Solarized Light theme https://ethanschoonover.com/solarized/ */
+
 body {
     background-color: #fdf6e3;
 }
 
 h1,
-p {
+p,
+li {
     font-family: monospace;
     color: #657b83;
+}
+
+a:link {
+    color: #6c71c4;
+}
+
+a:visited {
+    color: #d33682;
 }
