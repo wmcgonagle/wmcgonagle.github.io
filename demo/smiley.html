@@ -28,8 +28,13 @@
 
         // const pixelRatio = window.devicePixelRatio || 1;
 
-        canvas.width = window.innerHeight * 0.5625;
-        canvas.height = window.innerHeight;
+        if (window.innerHeight * 0.5625 > window.innerWidth) {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerWidth / 0.5625;
+        } else {
+          canvas.width = window.innerHeight * 0.5625;
+          canvas.height = window.innerHeight;
+        }
         ctx.scale(canvas.width / resWidth, canvas.height / resHeight);
 
         ctx.strokeStyle = "#657b83";
