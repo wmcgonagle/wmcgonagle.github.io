@@ -17,7 +17,6 @@
     <script>
       window.onload = (event) => {
         "use strict";
-        const stage = document.getElementById("stage");
         const canvas = document.getElementById("game");
         const ctx = canvas.getContext("2d");
 
@@ -29,8 +28,8 @@
 
         const pixelRatio = window.devicePixelRatio || 1;
 
-        canvas.width = screen.availHeight * 0.5625;
-        canvas.height = screen.availHeight;
+        canvas.width = window.innerHeight * 0.5625;
+        canvas.height = window.innerHeight;
         ctx.scale(canvas.width / resWidth, canvas.height / resHeight);
 
         ctx.strokeStyle = "#657b83";
