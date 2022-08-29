@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <style>
+      body {
+            background-color: #657b83;
+          }
+
+          #game {
+            border: 2px solid #fdf6e3;
+            background-color: #657b83;
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+          }
+    </style>
+    <script>
+      window.onload = (event) => {
+        "use strict";
+        const stage = document.getElementById("stage");
+        const canvas = document.getElementById("game");
+        const ctx = canvas.getContext("2d");
+
+        // Aspect Ratio = 9:16
+        // Default Resolution = 180x320 QnHD
+
+        const resWidth = canvas.width;
+        const resHeight = canvas.height;
+
+        const pixelRatio = window.devicePixelRatio || 1;
+
+        canvas.width = screen.availHeight * 0.5625;
+        canvas.height = screen.availHeight;
+        ctx.scale(canvas.width / resWidth, canvas.height / resHeight);
+
+        ctx.strokeStyle = "#fdf6e3";
+
+        // Smiley example from MDN
+        // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes#moving_the_pen
+        ctx.beginPath();
+        ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
+        ctx.moveTo(110, 75);
+        ctx.arc(75, 75, 35, 0, Math.PI, false); // Mouth (clockwise)
+        ctx.moveTo(65, 65);
+        ctx.arc(60, 65, 5, 0, Math.PI * 2, true); // Left eye
+        ctx.moveTo(95, 65);
+        ctx.arc(90, 65, 5, 0, Math.PI * 2, true); // Right eye
+        ctx.stroke();
+      };
+    </script>
+    <title>Smiley Demo</title>
+  </head>
+
+  <body>
+    <!-- 9:16 180x320 QnHD Resolution -->
+    <canvas id="game" width="180" height="320"
+      >Your browser does not support HTML5 canvas.</canvas
+    >
+  </body>
+</html>
